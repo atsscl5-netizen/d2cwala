@@ -145,3 +145,12 @@
     setInterval(function(){[].forEach.call(o,function(x){x.classList.remove('pick');});o[i].classList.add('pick');i=(i+1)%o.length;},1300);
   });
 })();
+
+/* Highlight spot rows in turn */
+(function(){
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  document.querySelectorAll('.spot ul').forEach(function(u){
+    var l=u.children,i=0;if(!l.length)return;
+    setInterval(function(){[].forEach.call(l,function(x){x.classList.remove('glow');});l[i].classList.add('glow');i=(i+1)%l.length;},1500);
+  });
+})();
